@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import os
+
 
 # Page configuration
 st.set_page_config(
@@ -794,3 +796,4 @@ elif selected == "Visualizations":
     plt.close()
 
     st.markdown('<p class="chart-description">Box plots showing statistical distribution of sensor values including median, quartiles, and outliers.</p>', unsafe_allow_html=True)
+
