@@ -180,7 +180,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load and train models
-data = pd.read_csv('/home/mk/Predictive-Maintenance/venv/src/Predictive-Maintenance-for-Industrial-Equipment/machinery_data.csv')
+
+BASE_DIR = os.path.dirname(__file__)
+file_path = os.path.join(BASE_DIR, "machinery_data.csv")
+
+data = pd.read_csv(file_path)
 data.ffill(inplace=True)
 
 features = ['sensor_1', 'sensor_2', 'sensor_3', 'operational_hours']
@@ -788,4 +792,5 @@ elif selected == "Visualizations":
     plt.tight_layout()
     st.pyplot(fig)
     plt.close()
+
     st.markdown('<p class="chart-description">Box plots showing statistical distribution of sensor values including median, quartiles, and outliers.</p>', unsafe_allow_html=True)
